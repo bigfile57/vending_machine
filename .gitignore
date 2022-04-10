@@ -3,3 +3,8 @@
 *.zip
 *.DS_Store
 *.pdf
+
+#folder
+
+블로그게시용사진/
+mediaquery/

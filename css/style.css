@@ -1,4 +1,75 @@
+/* 
+top 부터 main 까지 247px
+main 좌우 여백 586px
+main 박스 1개 360 x 545 
+main 전체 748px  /
+
+*/
+:root{
+    --main-bg-color: #eae8fe;
+    --purple-color: #6327fe;
+    --sold-out-color:rgba(0, 0, 0, 0.8);
+}
 body{
-    margin: 0;
-    padding: 0;
+    background-color:var(--main-bg-color);
+}
+.logo{
+    display: flex;
+    justify-content: center;
+}
+main{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center
+}
+.vending_wrap{
+    display: flex;
+    justify-content: space-between;
+    width: 748px;
+    margin: 75px auto;
+}
+
+.vending_content{
+    width: 306px;
+    height: 490px;
+    padding: 31px 27px 28px;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+}
+
+.drinks_wrap{
+    height: 272px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content:space-between;
+}
+.drinks{
+    box-shadow : 0px 0px 2px 1px silver;
+    border-radius: 10px;
+    width: 94px;
+    height: 130px;
+}
+.drinks:hover{
+    /* border: 3px solid var(--purple-color); */
+    box-shadow : 0px 0px 2px 3px var(--purple-color);
+    /* transform: scale(1.01);
+    transition: transform .5s; */
+}
+.vending_calc_ui{
+    width: 306px;
+}
+
+.visually-hidden{
+    overflow: hidden;
+    border: 0;
+    position: absolute;
+    z-index: -1;
+    width: 1px;
+    height: 1px;
+    clip: rect(1px,1px,1px,1px);
+    clip-path: inset(50%);
 }
