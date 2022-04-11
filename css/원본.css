@@ -25,38 +25,31 @@ body{
     display: flex;
     justify-content: center;
 }
-
 main{
-    width: 748px;
-    height: 545px;
-    margin: 75px auto 0px;
+    width: 100vw;
+    height: 100vh;
     display: flex;
     flex-direction: column;
-    flex-wrap: wrap;
-    align-content: space-between; /* 축이 column 이니까 가로여백은 align-content*/
+    align-items: center
 }
-.vending_left{
-    width: 360px;
-    height: 545px;
-    background-color: white;
+.vending_wrap{
+    display: flex;
+    justify-content: space-between;
+    width: 748px;
+    margin: 75px auto;
 }
-.vending_right_top{
-    width: 360px;
-    height: 50px;
-    background-color: white;
-}
-/* top이랑 bottom 사이 마진 20px */
-.vending_right_bottom{
-    margin-top: 20px;
-    width: 360px;
-    height: 475px;
+
+.vending_content{
+    width: 306px;
+    height: 490px;
+    padding: 31px 27px 28px;
+    display: flex;
+    flex-direction: column;
     background-color: white;
 }
 
-.vending_items{
-    width: 306px;
+.drinks_wrap{
     height: 272px;
-    padding: 31px 31px 20px 28px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -71,34 +64,37 @@ main{
 .drinks:hover{
     box-shadow : 0px 0px 2px 3px var(--purple-color-02);
 }
-.vending_balance_wrap{
-    width: 306px;
-    height: 33px;
-    display: flex;
-    flex-wrap: wrap;
+.vending_calc_ui{
+    height: 194px;
     justify-content: space-between;
-    margin-left: 27px;
 }
-.vending_balance{
+.vending_show_money{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.left_money_wrap{
     width:200px;
     height: 33px;
     border-radius: 5px;
     background-color: var(--purple-color-01);
 }
-.vending_balance p{
+.left_money_wrap p{
     display: inline-block;
     padding: 6px 10px 7px;
     font-size: 14px;
     line-height: 20px;
 }
-.balance_text{
+.left_money_text{
     width: 47px;
     height: 20px;
 }
-.balance{
+.left_money{
     margin-left: 60px;
 }
-.button_return_change{
+
+.vending_show_money #button_return_money{
     border: 0px;
     word-break:normal;
     text-align: center;
@@ -110,24 +106,25 @@ main{
     width: 94px;
     height: 32px;
 }
-.vending_deposit_wrap{
-    margin: 11px 27px
+.vending_money_input_wrap{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 11px;
 }
-.deposit_money{
+.input_money{
     width: 200px;
     height: 33px;
     border: 1px solid #BDBDBD;
     border-radius: 5px;
     box-sizing: border-box;
-    padding-left: 6px;
 } 
-.deposit_money::placeholder{
+.input_money::placeholder{
     font-size: 13px;
     line-height: 19px;
     color: #BDBDBD;
-    
+    padding-left: 6px;
 }
-#button_deposit_money{
+#button_put_money{
     margin-left: 8px;
     background: #FFFFFF;
     border: 0px;
@@ -136,59 +133,7 @@ main{
     width: 94px;
     height: 32px;
 }
-.vending_items_select{
-    display: flex;
-}
-
-.vending_item_list{
-    display: flex;
-    flex-direction: column;
-    overflow: scroll;
-    width: 200px;
-    height: 106px;
-    background-color: var(--purple-color-01);
-    border: 1px solid silver;
-    border-radius: 5px;
-    box-sizing: border-box;
-    margin-left: 27px;
-    margin-right: 12px;
-}
-.items{
-    width: 170px;
-    height: 46px;
-    background-color: white;
-    margin: 12px 18px 6px 12px;
-    box-sizing: border-box;
-}
-
-.items img{
-    width: 18px;
-    height: 33px;
-}
-.items p{
-    display: inline-block;
-    font-size: 9px;
-}
-.items div{
-    display: inline-block;
-    width: 30px;
-    height: 30px;
-    border: 1px solid silver;
-    border-radius: 5px;
-    line-height: 30px;
-    text-align: center;
-}
-
-#button_put_items{
-    color: white;
-    background-color: var(--purple-color-02);
-    border-radius: 5px;
-    width: 94px;
-    height: 106px;
-}
-
-
-/* .vending_shopping_list{
+.vending_shopping_list{
     width: 200px;
     height: 106px;
     background-color: var(--purple-color-01);
@@ -224,8 +169,7 @@ main{
     line-height: 30px;
     text-align: center;
 
-} */
-
+}
 .visually_hidden{
     overflow: hidden;
     border: 0;

@@ -15,42 +15,67 @@
         </div>
     </header>
     <main>
-        <div class="vending_wrap">
-            <section class="vending_content">
-                <section class="drinks_wrap">
-                    <!-- JS 에서 반복분으로 만들거같다 -->
-                    <div class="drinks">
-                        <img src="#" width="36px" height="65px">
-                    </div>
-                    <div class="drinks"></div>
-                    <div class="drinks"></div>
-                    <div class="drinks"></div>
-                    <div class="drinks"></div>
-                    <div class="drinks"></div>
-                </section>
-                <section class="vending_calc_ui">
-                    <div class="vending_select">
-                        <div>
-                            <p>잔액:<span>X 원</span></p>
-                            <button id="" name="">거스름돈 반환</button>
-                        </div>
-                        <form>
-                            <label class="visually-hidden">입금액입력</label>
-                            <input type="text" name="input_money" 
-                                    class="input_money"placeholder="입금액입력">
-                            <button type="sumit" value="입금">입금</button>
-                        </form>
-                    </div>
-                    <div class="vending_put_drinks">
-                        <div>1</div>
-                        <div>2</div>
-                    </div>
-                </section>
+        <section class="vending_left">
+            <h2 class="visually_hidden">음료와 결제</h2>
+            <section class="vending_items">
+                <h2 class="visually_hidden">음료들</h2>
+                <div class="drinks">
+                    <img src="#" width="36px" height="65px" alt="">
+                </div>
+                <div class="drinks"></div>
+                <div class="drinks"></div>
+                <div class="drinks"></div>
+                <div class="drinks"></div>
+                <div class="drinks"></div>
             </section>
-            <section class="vending_content">
+            <section class="vending_balance_wrap">
+                <h2 class="visually_hidden">계산</h2>
+                    <div class="vending_balance">
+                        <p class="balance_text">잔액 :</p>
+                        <p class="balance">1000원</p>
+                    </div>
+                    <button class="button_return_change" id="return_change" name="return_change" type="button">거스름돈 반환</button>
+            </section>
+            <section class="vending_deposit_wrap">
+                <form action="" name="" method="">
+                    <fieldset>
+                        <legend>입금액입력</legend>
+                            <label class="visually_hidden" for="deposit_money">
+                                입금액입력
+                            </label> 
+                            <input type="number" name="input_money"id="deposit_money"
+                                    class="deposit_money" placeholder="입금액입력">
+                            <button id="button_deposit_money" type="submit">
+                                입금
+                            </button>
+                    </fieldset>
+                </form>
+            </section>
+            <section class="vending_items_select">
+                <div class="vending_item_list">
+                    <ul class="vending_item_list_wrap">
+                        <li class="items">
+                            <img src="./image/Cool_Cola.png">
+                            <p>Cool_Cola</p>
+                            <div>1</div>
+                        </li>
+                        <li class="items"></li>
+                        <li class="items"></li>
+                        <li class="items"></li>
+                    </ul>
+                </div>
+                <button id="button_put_items" type="button">
+                    확인
+                </button>
+            </section>
+        </section>
 
-            </section>
-        </div>
+        <section class="vending_right_top">
+
+        </section>
+        <section class="vending_right_bottom">
+
+        </section>
     </main>
 </body>
 </html>

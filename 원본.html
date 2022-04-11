@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vending_machine</title>
+    <link rel="stylesheet" type="text/css" href="./css/reset.css">
+    <link rel="stylesheet" type="text/css" href="./css/원본.css">
+</head>
+<body>
+    <header class="logo">
+        <div class="logo_img">
+            <img src="./image/Logo_img.png" width="390px" height="170px">
+        </div>
+    </header>
+    <main>
+        <section class="vending_wrap">
+            <section class="vending_content">
+                <h2 class="visually_hidden">vending_machine_main</h2>
+                <section class="drinks_wrap">
+                    <h2 class="visually_hidden">drinks</h2>
+                    <div class="drinks">
+                        <img src="#" width="36px" height="65px">
+                    </div>
+                    <div class="drinks"></div>
+                    <div class="drinks"></div>
+                    <div class="drinks"></div>
+                    <div class="drinks"></div>
+                    <div class="drinks"></div>
+                </section>
+                <section class="vending_calc_ui">
+                    <h2 class="visually_hidden">calculation</h2>
+                    <div class="vending_select">
+                        <div class="vending_show_money">
+                            <div class="left_money_wrap">
+                                <p class="left_money_text">잔액:</p>
+                                <p class="left_money">1000원</p>
+                            </div>
+                            <button id="button_return_money" name="button_return_money">
+                                거스름돈 반환
+                            </button>
+                        </div>
+                        <div class="vending_money_input_wrap">
+                            <form action="" name="" method="">
+                                <fieldset>
+                                    <legend>입금액입력</legend>
+                                        <!-- label 연결하고 form  -->
+                                        <label class="visually_hidden" for="input_money">입금액입력</label>
+                                            <input type="text" name="input_money" id="input_money"
+                                                class="input_money"placeholder="입금액입력">
+                                        <button id="button_put_money" type="sumit" value="입금">입금</button> 
+                                </fieldset>
+                            </form>
+                        </div>
+                    </div>
+                            <ul class="vending_shopping_list">
+                                <li class="drinks_list">
+                                    <img src="./image/Cool_Cola.png">
+                                    <p>Cool_Cola</p>
+                                    <div>1</div>
+                                </li>
+                                <li>
+    
+                                </li>
+                                <li>
+    
+                                </li>
+                            </ul>
+                            <button id="button_put_drinks" type="button">획득</button>
+                </section>
+            </section>
+            <section class="vending_content">
+
+            </section>
+        </section>
+    </main>
+</body>
+</html>
