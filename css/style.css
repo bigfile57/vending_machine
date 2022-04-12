@@ -187,44 +187,70 @@ main{
     height: 106px;
 }
 
-
-/* .vending_shopping_list{
-    width: 200px;
-    height: 106px;
+.vending_right_top .pocket_money{
+    width: 306px;
+    padding: 9px 27px;
     background-color: var(--purple-color-01);
-    border: 1px solid silver;
-    border-radius: 5px;
-    box-sizing: border-box;
+    background-clip: content-box;
 }
-
-#button_put_drinks{
-    width: 94px;
-    height: 106px;
+.vending_right_bottom>h2{
+    text-align: center;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 20px;
+    padding: 25px 0px 13px;
 }
-.drinks_list{
-    width: 170px;
-    height: 46px;
+.pocket_money p{
+    display: inline-block;
+    padding: 6px 10px;
+}
+.pocket_money .txt_pocket_money{
+    float: left;
+}
+.pocket_money .data_pocket_money{
+    float: right;
+}
+.cont_items .list_items{
+    width: 276px;
+    padding: 12px 18px 6px 12px;
     background-color: white;
-
+    background-clip: content-box;
+    overflow: hidden;
+    /* floating 해결을 위해 사용 */
 }
-.drinks_list img{
+.cont_items{
+    height: 364px;
+    padding: 0px 27px 52px;
+    background-color: var(--purple-color-01);
+    background-clip: content-box;
+}
+
+.cont_items .list_items img{
+    float: left;
     width: 18px;
     height: 33px;
+    padding: 6px 10px 7px;
 }
-.drinks_list p{
+.cont_items .list_items p,div{
     display: inline-block;
+}
+.cont_items .list_items .txt_item{
+    font-weight: 500;
     font-size: 9px;
+    line-height: 13px;
+    padding: 18px 0px;
+    float: left;
 }
-.drinks_list div{
-    display: inline-block;
+.cont_items .list_items .div_count{
     width: 30px;
     height: 30px;
     border: 1px solid silver;
     border-radius: 5px;
     line-height: 30px;
     text-align: center;
-
-} */
+    float: right;
+    margin: 8px;
+}
 
 .visually_hidden{
     overflow: hidden;
