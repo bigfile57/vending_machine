@@ -1,10 +1,3 @@
-/* 
-top 부터 main 까지 247px
-main 좌우 여백 586px
-main 박스 1개 360 x 545 
-main 전체 748px  /
-
-*/
 @import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
 
 *{ 
@@ -17,7 +10,16 @@ main 전체 748px  /
     --purple-color-02: #6327fe;
     --sold-out-color:rgba(0, 0, 0, 0.8);
 }
-
+.visually_hidden{
+    overflow: hidden;
+    border: 0;
+    position: absolute;
+    z-index: -1;
+    width: 1px;
+    height: 1px;
+    clip: rect(1px,1px,1px,1px);
+    clip-path: inset(50%);
+}
 body{
     background-color:var(--purple-color-01);
 }
@@ -52,24 +54,43 @@ main{
     height: 475px;
     background-color: white;
 }
-
 .vending_items{
     width: 306px;
-    height: 272px;
-    padding: 31px 31px 20px 28px;
+    padding: 31px 27px 8px 28px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    align-content:space-between;
 }
-.drinks{
+.wrap_drinks{
     box-shadow : 0px 0px 2px 1px silver;
     border-radius: 10px;
     width: 94px;
-    height: 130px;
+    padding: 11px 0px 10px;
+    margin-bottom: 12px;
 }
-.drinks:hover{
+.wrap_drinks:hover{
     box-shadow : 0px 0px 2px 3px var(--purple-color-02);
+}
+.wrap_drinks img{
+    display: block;
+    margin: 0 auto;
+    width: 35px;
+    height: 65px;
+}
+.wrap_drinks .txt_item{
+    font-weight: 500;
+    font-size: 9px;
+    line-height: 13px;
+    padding: 6px 0px 7px;
+    text-align: center;
+}
+.wrap_drinks .button_price{
+    display: block;
+    width: 70px;
+    margin: 0 10px 0px 11px;
+    background-color: var(--purple-color-02);
+    color: white;
+    border-radius: 50px;
 }
 .vending_balance_wrap{
     width: 306px;
@@ -139,7 +160,6 @@ main{
 .vending_items_select{
     display: flex;
 }
-
 .vending_item_list{
     display: flex;
     flex-direction: column;
@@ -153,32 +173,6 @@ main{
     margin-left: 27px;
     margin-right: 12px;
 }
-.items{
-    width: 170px;
-    height: 46px;
-    background-color: white;
-    margin: 12px 18px 6px 12px;
-    box-sizing: border-box;
-}
-
-.items img{
-    width: 18px;
-    height: 33px;
-}
-.items p{
-    display: inline-block;
-    font-size: 9px;
-}
-.items div{
-    display: inline-block;
-    width: 30px;
-    height: 30px;
-    border: 1px solid silver;
-    border-radius: 5px;
-    line-height: 30px;
-    text-align: center;
-}
-
 #button_put_items{
     color: white;
     background-color: var(--purple-color-02);
@@ -186,7 +180,6 @@ main{
     width: 94px;
     height: 106px;
 }
-
 .vending_right_top .pocket_money{
     width: 306px;
     padding: 9px 27px;
@@ -210,38 +203,50 @@ main{
 .pocket_money .data_pocket_money{
     float: right;
 }
-.cont_items .list_items{
+.list_left{
+    width: 170px;
+}
+.list_right{
     width: 276px;
-    padding: 12px 18px 6px 12px;
+}
+/* padding 으로 만 레이아웃을 잡으면 overflow scroll 이 안되고 
+   테두리를 넣을 수 없어서 바꿈
+*/
+.cont_items{
+    height: 364px;
+    box-sizing: border-box;
+    border: 1px silver solid;
+    margin: 0px 27px;
+    /* padding: 6px 27px 52px; */
+    background-color: var(--purple-color-01);
+    background-clip: content-box;
+    border-radius: 5px;
+    overflow: scroll;
+}
+
+.list_items{
+    margin-top: 6px;
+    padding: 6px 18px 6px 10px;
     background-color: white;
     background-clip: content-box;
     overflow: hidden;
-    /* floating 해결을 위해 사용 */
 }
-.cont_items{
-    height: 364px;
-    padding: 0px 27px 52px;
-    background-color: var(--purple-color-01);
-    background-clip: content-box;
-}
-
-.cont_items .list_items img{
+.list_items img{
     float: left;
     width: 18px;
     height: 33px;
     padding: 6px 10px 7px;
 }
-.cont_items .list_items p,div{
+.list_items .txt_item{
     display: inline-block;
-}
-.cont_items .list_items .txt_item{
     font-weight: 500;
     font-size: 9px;
     line-height: 13px;
     padding: 18px 0px;
     float: left;
 }
-.cont_items .list_items .div_count{
+.list_items .div_count{
+    display: inline-block;
     width: 30px;
     height: 30px;
     border: 1px solid silver;
@@ -252,13 +257,3 @@ main{
     margin: 8px;
 }
 
-.visually_hidden{
-    overflow: hidden;
-    border: 0;
-    position: absolute;
-    z-index: -1;
-    width: 1px;
-    height: 1px;
-    clip: rect(1px,1px,1px,1px);
-    clip-path: inset(50%);
-}
