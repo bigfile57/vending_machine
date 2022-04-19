@@ -30,181 +30,163 @@ body{
 main{
     width: 748px;
     height: 545px;
-    margin: 75px auto 0px;
+    margin: 75px auto 171px;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    align-content: space-between; /* 축이 column 이니까 가로여백은 align-content*/
+    align-content: space-between;
 }
 .wrap_vending_left{
-    width: 360px;
-    box-sizing: border-box;
-    background-color: white;
-}
-.wrap_payment_window{
-    width: 360px;
-    background-color: var(--purple-color-01);
-}
-.vending_right_top{
-    width: 360px;
-    height: 50px;
-    background-color: white;
-}
-/* top이랑 bottom 사이 마진 20px */
-.vending_right_bottom{
-    margin-top: 20px;
-    width: 360px;
-    height: 475px;
-    background-color: white;
-}
-.vending_items{
     width: 306px;
-    padding: 31px 27px 8px 28px;
+    padding: 27px 27px 24px 27px;
+    background-color: white;
+}
+.wrap_items{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
 }
-.wrap_drinks{
+.div_item{
     box-shadow : 0px 0px 2px 1px silver;
+    /* filter: drop-shadow(0px 0px 3px rgba(0,0,0,0.25)); */
     border-radius: 10px;
     width: 94px;
-    padding: 11px 0px 10px;
+    padding: 11px 0px 9px;
+}
+.div_item:nth-child(-n+4){
     margin-bottom: 12px;
 }
-.wrap_drinks:hover{
+.div_item:hover{
     box-shadow : 0px 0px 2px 3px var(--purple-color-02);
 }
-.wrap_drinks img{
+.div_item img{
     display: block;
     margin: 0 auto;
     width: 35px;
     height: 65px;
 }
-.wrap_drinks .txt_item{
+.div_item .txt_item{
     font-weight: 500;
     font-size: 9px;
     line-height: 13px;
     padding: 6px 0px 7px;
     text-align: center;
 }
-.wrap_drinks .button_price{
+.div_item .button_price{
     display: block;
+    font-size: 12px;
+    line-height: 12px;
     width: 70px;
     margin: 0 10px 0px 11px;
+    padding: 5px 0px;
     background-color: var(--purple-color-02);
     color: white;
     border-radius: 50px;
 }
-.vending_balance_wrap{
-    width: 306px;
-    height: 33px;
+.wrap_balance{
+    width: 100%;
+    margin: 20px 0px 11px;
     display: flex;
-    flex-wrap: wrap;
     justify-content: space-between;
-    margin-left: 27px;
 }
-.vending_balance{
+.div_balance{
+    display: inline-block;
     width:200px;
-    height: 33px;
+    box-sizing: border-box;
+    padding: 6px 10px 7px;
     border-radius: 5px;
     background-color: var(--purple-color-01);
-}
-.vending_balance p{
-    display: inline-block;
-    padding: 6px 10px 7px;
     font-size: 14px;
     line-height: 20px;
 }
-.balance_text{
-    width: 47px;
-    height: 20px;
+.div_balance span{
+    float: right;
 }
-.balance{
-    margin-left: 60px;
-}
-.button_return_change{
-    border: 0px;
-    word-break:normal;
-    text-align: center;
+.wrap_balance .button_return_change{
+    width: 94px;
+    padding: 6px 0px 8px;
     font-size: 13px;
     line-height: 19px;
     background: #FFFFFF;
-    box-shadow : 0px 0px 2px 1px silver;
+    filter: drop-shadow(0px 0px 3px rgba(0,0,0,0.25));
     border-radius: 5px;
-    width: 94px;
-    height: 32px;
 }
-.vending_deposit_wrap{
-    margin: 11px 27px
+.wrap_deposit{
+    width: 100%;
 }
-.deposit_money{
+.inp_money{
     width: 200px;
-    height: 33px;
+    padding: 6px 0px 8px 6px;
     border: 1px solid #BDBDBD;
     border-radius: 5px;
     box-sizing: border-box;
-    padding-left: 6px;
-} 
-.deposit_money::placeholder{
     font-size: 13px;
     line-height: 19px;
     color: #BDBDBD;
-    
-}
-#button_deposit_money{
-    margin-left: 8px;
-    background: #FFFFFF;
-    border: 0px;
-    box-shadow : 0px 0px 2px 1px silver;
-    border-radius: 5px;
+} 
+.button_deposit_money{
+    float: right;
     width: 94px;
-    height: 32px;
+    padding: 7px 0px 7px;
+    font-size: 13px;
+    line-height: 20px;
+    background: #FFFFFF;
+    filter: drop-shadow(0px 0px 3px rgba(0,0,0,0.25));
+    border-radius: 5px;
 }
-.vending_items_select{
+.wrap_items_list{
+    width: 100%;
     display: flex;
+    justify-content: space-between;
+    margin-top: 12px;
 }
-.vending_item_list{
-    display: flex;
-    flex-direction: column;
-    overflow: scroll;
+.div_items_list{
     width: 200px;
     height: 106px;
+    padding: 12px 18px 0px 12px;
     background-color: var(--purple-color-01);
     border: 1px solid silver;
     border-radius: 5px;
     box-sizing: border-box;
-    margin-left: 27px;
-    margin-right: 12px;
+    overflow: scroll;
 }
-#button_put_items{
+.button_put_items{
     color: white;
     background-color: var(--purple-color-02);
     border-radius: 5px;
     width: 94px;
-    height: 106px;
+    padding: 0px 35px;
 }
-.vending_right_top .pocket_money{
-    width: 306px;
+
+.wrap_pocket_money{
     padding: 9px 27px;
-    background-color: var(--purple-color-01);
-    background-clip: content-box;
+    background-color: white;
 }
-.vending_right_bottom>h2{
+.wrap_pocket_money .div_pocket_money{
+    width: 100%;
+    display: inline-block;
+    box-sizing: border-box;
+    padding: 6px 10px 7px;
+    border-radius: 5px;
+    background-color: var(--purple-color-01);
+    font-size: 14px;
+    line-height: 20px;
+}
+.div_pocket_money span{
+    float: right;
+}
+.wrap_shopping_basket{
+    box-sizing: border-box;
+    margin-top: 20px;
+    padding: 28px 27px 26px;
+    background-color: white;
+}
+.wrap_shopping_basket>h2{
+    margin-bottom: 13px;
     text-align: center;
     font-size: 14px;
     font-weight: 700;
     line-height: 20px;
-    padding: 25px 0px 13px;
-}
-.pocket_money p{
-    display: inline-block;
-    padding: 6px 10px;
-}
-.pocket_money .txt_pocket_money{
-    float: left;
-}
-.pocket_money .data_pocket_money{
-    float: right;
 }
 .list_left{
     width: 170px;
@@ -212,27 +194,32 @@ main{
 .list_right{
     width: 276px;
 }
-/* padding 으로 만 레이아웃을 잡으면 overflow scroll 이 안되고 
-   테두리를 넣을 수 없어서 바꿈
-*/
-.cont_items{
-    height: 364px;
-    box-sizing: border-box;
-    border: 1px silver solid;
-    margin: 0px 27px;
-    /* padding: 6px 27px 52px; */
+/* .div_items_list{
+    width: 200px;
+    height: 106px;
+    padding: 12px 18px 0px 12px;
     background-color: var(--purple-color-01);
-    background-clip: content-box;
+    border: 1px solid silver;
+    border-radius: 5px;
+    box-sizing: border-box;
+    overflow: scroll;
+} */
+.div_items_list2{
+    width: 100%;
+    height: 364px;
+    border: 1px silver solid;
+    padding: 12px 18px 0px 12px;
+    box-sizing: border-box;
+    background-color: var(--purple-color-01);
     border-radius: 5px;
     overflow: scroll;
 }
 
 .list_items{
-    margin-top: 6px;
-    padding: 6px 18px 6px 10px;
+    margin-bottom: 6px;
     background-color: white;
-    background-clip: content-box;
     overflow: hidden;
+    border-radius: 5px;
 }
 .list_items img{
     float: left;
@@ -241,22 +228,26 @@ main{
     padding: 6px 10px 7px;
 }
 .list_items .txt_item{
-    display: inline-block;
+    float: left;
     font-weight: 500;
     font-size: 9px;
     line-height: 13px;
     padding: 18px 0px;
-    float: left;
 }
 .list_items .div_count{
-    display: inline-block;
+    float: right;
     width: 30px;
     height: 30px;
     border: 1px solid silver;
     border-radius: 5px;
     line-height: 30px;
     text-align: center;
-    float: right;
     margin: 8px;
+}
+.wrap_shopping_basket .txt_total{
+    float: right;
+    margin-top: 6px;
+    font-size: 12px;
+    line-height: 17px;
 }
 
