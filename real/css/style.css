@@ -42,7 +42,6 @@ main{
 .wrap_items{
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
     gap: 12px;
 }
 .div_item{
