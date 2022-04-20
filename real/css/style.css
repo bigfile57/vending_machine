@@ -43,6 +43,7 @@ main{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    gap: 12px;
 }
 .div_item{
     box-shadow : 0px 0px 2px 1px silver;
@@ -50,9 +51,6 @@ main{
     border-radius: 10px;
     width: 94px;
     padding: 11px 0px 9px;
-}
-.div_item:nth-child(-n+4){
-    margin-bottom: 12px;
 }
 .div_item:hover{
     box-shadow : 0px 0px 2px 3px var(--purple-color-02);
