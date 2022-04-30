@@ -1,5 +1,4 @@
 @import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
-
 *{ 
     font-family: 'Noto Sans KR', sans-serif;
     font-style: normal;
@@ -11,12 +10,14 @@
     --sold-out:rgba(0, 0, 0, 0.8);
 }
 .visually_hidden{
+    overflow: hidden;
+    border: 0;
     position: absolute;
-    clip: rect(0 0 0 0);
+    z-index: -1;
     width: 1px;
     height: 1px;
-    margin: -1px;
-    overflow: hidden;
+    clip: rect(1px,1px,1px,1px);
+    clip-path: inset(50%);
 }
 body{
     background-color:var(--purple-color-01);
@@ -26,188 +27,229 @@ body{
     margin: 0 auto;
 }
 main{
-    margin: 75px auto;
+    width: 748px;
+    height: 545px;
+    margin: 75px auto 0px;
     display: flex;
-    justify-content: center;
-    align-items: flex-start;
+    flex-direction: column;
     flex-wrap: wrap;
-    gap: 27px;
+    align-content: space-between; /* 축이 column 이니까 가로여백은 align-content*/
 }
 .wrap_vending_left{
     width: 360px;
     box-sizing: border-box;
-    padding: 27px 27px 24px;
     background-color: white;
 }
-.wrap_items{
+.wrap_payment_window{
+    width: 360px;
+    background-color: var(--purple-color-01);
+}
+.vending_right_top{
+    width: 360px;
+    height: 50px;
+    background-color: white;
+}
+/* top이랑 bottom 사이 마진 20px */
+.vending_right_bottom{
+    margin-top: 20px;
+    width: 360px;
+    height: 475px;
+    background-color: white;
+}
+.vending_items{
+    width: 306px;
+    padding: 31px 27px 8px 28px;
     display: flex;
     flex-wrap: wrap;
-    gap: 12px;
+    justify-content: space-between;
 }
-.div_item{
+.wrap_drinks{
+    position: relative;
     box-shadow : 0px 0px 2px 1px silver;
-    /* filter: drop-shadow(0px 0px 3px rgba(0,0,0,0.25)); */
     border-radius: 10px;
     width: 94px;
-    padding: 11px 0px 9px;
+    padding: 11px 0px 10px;
+    margin-bottom: 12px;
 }
-.div_item:hover{
+.wrap_drinks:hover:not(.sold_out){
     box-shadow : 0px 0px 2px 3px var(--purple-color-02);
 }
-.div_item img{
+.wrap_drinks img{
     display: block;
     margin: 0 auto;
     width: 35px;
     height: 65px;
 }
-.div_item .txt_item{
+.sold_out::before{
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    box-sizing: border-box;
+    z-index: 10;
+    background: no-repeat center / 60px 46px url('../image/Sold-out.png') rgba(0, 0, 0, 0.8);
+}
+.wrap_drinks .txt_item{
     font-weight: 500;
     font-size: 9px;
     line-height: 13px;
     padding: 6px 0px 7px;
     text-align: center;
 }
-.div_item .button_price{
+.wrap_drinks .button_price{
     display: block;
+    border: none;
+    width: 70px;
     font-size: 12px;
     line-height: 12px;
-    width: 70px;
+    padding: 5px 0;
     margin: 0 10px 0px 11px;
-    padding: 5px 0px;
     background-color: var(--purple-color-02);
     color: white;
     border-radius: 50px;
 }
-.wrap_balance{
+.vending_balance_wrap{
+    width: 306px;
+    height: 33px;
     display: flex;
-    margin: 20px 0px 11px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-left: 27px;
 }
-.div_balance{
-    flex-grow: 1;
-    box-sizing: border-box;
-    padding: 6px 10px 7px;
+.vending_balance{
+    width:200px;
+    height: 33px;
     border-radius: 5px;
     background-color: var(--purple-color-01);
+}
+.vending_balance p{
+    display: inline-block;
+    padding: 6px 10px 7px;
     font-size: 14px;
     line-height: 20px;
 }
-.div_balance span{
-    float: right;
+.balance_text{
+    width: 47px;
+    height: 20px;
 }
-.wrap_balance .button_return_change{
-    width: 94px;
-    margin-left: 12px;
-    padding: 6px 0px 8px;
+.balance{
+    margin-left: 60px;
+}
+.button_return_change{
+    border: 0px;
+    word-break:normal;
+    text-align: center;
     font-size: 13px;
     line-height: 19px;
     background: #FFFFFF;
-    filter: drop-shadow(0px 0px 3px rgba(0,0,0,0.25));
+    box-shadow : 0px 0px 2px 1px silver;
     border-radius: 5px;
+    width: 94px;
+    height: 32px;
 }
-.wrap_deposit{
-    width: 100%;
+.vending_deposit_wrap{
+    margin: 11px 27px
 }
-.inp_money{
+.deposit_money{
     width: 200px;
-    display: inline-block;
-    padding: 6px 0px 8px 6px;
+    height: 33px;
     border: 1px solid #BDBDBD;
     border-radius: 5px;
     box-sizing: border-box;
+    padding-left: 6px;
+} 
+.deposit_money::placeholder{
     font-size: 13px;
     line-height: 19px;
     color: #BDBDBD;
-} 
-.button_deposit_money{
-    float: right;
-    width: 94px;
-    margin-left: 12px;
-    padding: 7px 0px 7px;
-    font-size: 13px;
-    line-height: 20px;
+    
+}
+#button_deposit_money{
+    margin-left: 8px;
     background: #FFFFFF;
-    filter: drop-shadow(0px 0px 3px rgba(0,0,0,0.25));
+    border: 0px;
+    box-shadow : 0px 0px 2px 1px silver;
     border-radius: 5px;
+    width: 94px;
+    height: 32px;
 }
-.wrap_items_list{
-    width: 100%;
+.vending_items_select{
     display: flex;
-    margin-top: 12px;
 }
-.div_items_list{
-    flex-grow: 1;
+.vending_item_list{
+    display: flex;
+    flex-direction: column;
+    overflow: scroll;
+    width: 200px;
     height: 106px;
-    padding: 12px 18px 0px 12px;
     background-color: var(--purple-color-01);
     border: 1px solid silver;
     border-radius: 5px;
     box-sizing: border-box;
-    overflow: scroll;
+    margin-left: 27px;
+    margin-right: 12px;
 }
-.button_put_items{
+#button_put_items{
     color: white;
     background-color: var(--purple-color-02);
     border-radius: 5px;
     width: 94px;
-    margin-left: 12px;
-    padding: 0px 35px;
+    height: 106px;
 }
-.wrap_vending_right{
-    width: 360px;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-.wrap_pocket_money{
+.vending_right_top .pocket_money{
+    width: 306px;
     padding: 9px 27px;
-    background-color: white;
-}
-.wrap_pocket_money .div_pocket_money{
-    width: 100%;
-    display: inline-block;
-    box-sizing: border-box;
-    padding: 6px 10px 7px;
-    border-radius: 5px;
     background-color: var(--purple-color-01);
-    font-size: 14px;
-    line-height: 20px;
+    background-clip: content-box;
 }
-.div_pocket_money span{
-    float: right;
-}
-.wrap_shopping_basket{
-    box-sizing: border-box;
-    padding: 28px 27px 27px;
-    background-color: white;
-}
-.wrap_shopping_basket>h2{
-    margin-bottom: 13px;
+.vending_right_bottom>h2{
     text-align: center;
     font-size: 14px;
     font-weight: 700;
     line-height: 20px;
+    padding: 25px 0px 13px;
+}
+.pocket_money p{
+    display: inline-block;
+    padding: 6px 10px;
+}
+.pocket_money .txt_pocket_money{
+    float: left;
+}
+.pocket_money .data_pocket_money{
+    float: right;
 }
 .list_left{
-    height: 106px;
+    width: 170px;
 }
 .list_right{
-    height: 364px;
+    width: 276px;
 }
-.div_items_list{
-    width: 100%;
-    border: 1px silver solid;
-    padding: 12px 18px 0px 12px;
+/* padding 으로 만 레이아웃을 잡으면 overflow scroll 이 안되고 
+   테두리를 넣을 수 없어서 바꿈
+*/
+.cont_items{
+    height: 364px;
     box-sizing: border-box;
+    border: 1px silver solid;
+    margin: 0px 27px;
+    /* padding: 6px 27px 52px; */
     background-color: var(--purple-color-01);
+    background-clip: content-box;
     border-radius: 5px;
     overflow: scroll;
 }
+
 .list_items{
-    width: 100%;
-    margin-bottom: 6px;
+    margin-top: 6px;
+    padding: 6px 18px 6px 10px;
     background-color: white;
+    background-clip: content-box;
     overflow: hidden;
-    border-radius: 5px;
 }
 .list_items img{
     float: left;
@@ -216,7 +258,7 @@ main{
     padding: 6px 10px 7px;
 }
 .list_items .txt_item{
-    float: left;
+    display: inline-block;
     font-weight: 500;
     font-size: 9px;
     line-height: 13px;
@@ -231,11 +273,5 @@ main{
     line-height: 30px;
     text-align: center;
     margin: 8px;
-}
-.wrap_shopping_basket .txt_total{
-    float: right;
-    margin-top: 6px;
-    font-size: 12px;
-    line-height: 17px;
 }
 
