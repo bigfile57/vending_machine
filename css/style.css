@@ -33,12 +33,13 @@ main{
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    align-content: space-between; /* 축이 column 이니까 가로여백은 align-content*/
+    align-content: space-between; 
 }
 .wrap_vending_left{
     width: 360px;
     box-sizing: border-box;
     background-color: white;
+    padding-bottom: 20px;
 }
 .wrap_payment_window{
     width: 360px;
@@ -49,7 +50,6 @@ main{
     height: 50px;
     background-color: white;
 }
-/* top이랑 bottom 사이 마진 20px */
 .vending_right_bottom{
     margin-top: 20px;
     width: 360px;
@@ -229,15 +229,11 @@ main{
 .list_right{
     width: 276px;
 }
-/* padding 으로 만 레이아웃을 잡으면 overflow scroll 이 안되고 
-   테두리를 넣을 수 없어서 바꿈
-*/
 .cont_items{
     height: 364px;
     box-sizing: border-box;
     border: 1px silver solid;
     margin: 0px 27px;
-    /* padding: 6px 27px 52px; */
     background-color: var(--purple-color-01);
     background-clip: content-box;
     border-radius: 5px;
@@ -273,5 +269,12 @@ main{
     line-height: 30px;
     text-align: center;
     margin: 8px;
+}
+.txt_total_money{
+    float: right;
+    margin-top: 6px;
+    margin-right: 28px;
+    font-size: 12px;
+    line-height: 17px;
 }
 
